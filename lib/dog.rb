@@ -49,7 +49,8 @@ class Dog
   def self.find_or_create_by(id: nil, name:, breed:)
       dog_array = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
       if dog_array != nil
-        
+        dog_data = dog_array[0]
+        dog = Dog.new()
   
   end
   
