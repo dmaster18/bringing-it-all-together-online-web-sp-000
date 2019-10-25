@@ -49,13 +49,14 @@ class Dog
   
   def self.find_or_create_by(id: nil, name:, breed:)
       dog_array = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ? LIMIT 1", name, breed)
-      if dog_array != nil
-        dog_data = dog_array[0]
-        dog = Dog.new(id: dog_data[0], name: dog_data[1], breed: dog_data[2])
-      else 
-        dog = self.create(id: id, name: name, breed: breed)
-      end
-      dog
+      if !dog_array.empty?
+        dog_data = song[0]
+        dog = .new(song_data[0], song_data[1], song_data[2])
+    else
+      song = self.create(name: name, album: album)
+    end
+    song
+  end
   end
   
   
