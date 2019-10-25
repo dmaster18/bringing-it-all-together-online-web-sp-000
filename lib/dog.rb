@@ -47,7 +47,7 @@ class Dog
   end
   
   def self.find_or_create_by(id: nil, name:, breed:)
-    if dog 
+      dog = DB[:conn].execute("SELECT * FROM songs WHERE name = ? AND album = ?", name, album)
   
   
   end
