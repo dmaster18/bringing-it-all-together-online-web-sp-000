@@ -55,8 +55,7 @@ class Dog
       else
         dog = self.create(id: id, name: name, album: album)
       end
-    dog
-  end
+      dog
   end
   
   
