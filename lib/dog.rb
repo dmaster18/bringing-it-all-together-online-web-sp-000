@@ -9,7 +9,7 @@ class Dog
     @breed = breed
   end
   
-  def self.::create_table
+  def self.create_table
     sql = "DROP TABLE IF EXISTS dogs"
     DB[:conn].execute(sql)
     Dog.create_table
@@ -20,19 +20,19 @@ class Dog
     DB[:conn].execute(sql)
   end
   
-  def self.::drop_table
+  def self.drop_table
     sql = "DROP TABLE IF EXISTS dogs"
     DB[:conn].execute(sql)
   end
   
-  def self.::new_from_db(row)
+  def self.new_from_db(row)
     id = row[0]
     name = row[1]
     breed = row[2]
     Dog.new(id: id, name: name, breed: breed)
   end
   
-  def self.::find_by_name(name)
+  def self.find_by_name(name)
     sql = "SELECT*FROM dogs WHERE name = ?"
     dog_data = DB[:conn].execute(sql, name)[0]
     Dog.new(id: dog_data[0], name: dog_data[1], breed: dog_data[2])
