@@ -50,7 +50,7 @@ class Dog
       dog_array = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
       if dog_array != nil
         dog_data = dog_array[0]
-        dog = self.new(name: dog_data[1], breed: dog_data[2])
+        dog = self.new(id: dog_data[0], name: dog_data[1], breed: dog_data[2])
       else 
         dog = self.create(id: id, name: name, breed: breed)
       end
