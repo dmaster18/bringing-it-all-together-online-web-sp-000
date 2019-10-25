@@ -35,7 +35,7 @@ class Dog
   end  
   
   def self.create(id: nil, name:, breed:)
-    Dog.new(id: id, name: name, breed: breed)
+    dog = Dog.new(id: id, name: name, breed: breed)
     
   end
   
