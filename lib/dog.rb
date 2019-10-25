@@ -51,9 +51,9 @@ class Dog
       dog_array = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ? LIMIT 1", name, breed)
       if !dog_array.empty?
         dog_data = dog[0]
-        dog = self.new(dog_data[0], dog_data[1], dog_data[2])
-    else
-      dog = self.create(name: name, album: album)
+        dog = self.new(id: dog_data[0], name: dog_data[1], breed: dog_data[2])
+      else
+        dog = self.create(name: name, album: album)
     end
     dog
   end
