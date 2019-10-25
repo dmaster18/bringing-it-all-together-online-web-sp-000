@@ -52,7 +52,7 @@ class Dog
         dog_data = dog_array[0]
         dog = Dog.new(dog_data[0], dog_data[1], dog_data[2])
       else 
-        self.create(id: id, name: name, breed: breed)
+        dog = self.create(id: id, name: name, breed: breed)
       end
   end
   
